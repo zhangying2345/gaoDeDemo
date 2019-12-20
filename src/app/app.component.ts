@@ -29,24 +29,24 @@ export class AppComponent implements OnInit {
   } */
 
   ngOnInit() {
-    let map = new GaoDeMap('container', {
-      zoom: 13,
-      center: [116.397428, 39.90923],
-    });
+    // let map = new GaoDeMap('container', {
+    //   zoom: 13,
+    //   center: [116.397428, 39.90923],
+    // });
 
-    let marker = new Marker({
-      content: `<div class="marker-route"><img alt="T"><span class="marker-route-sp">平凉</span></div>`,
-      // content: "<div class = 'taiwan'>宝岛台湾</div>",
-      position: new AMap.LngLat(116.397428, 39.90923),
-      offset: new AMap.Pixel(-8, -11),
-      title: 'test',
-    });
+    // let marker = new Marker({
+    //   content: `<div class="marker-route"><img alt="T"><span class="marker-route-sp">平凉</span></div>`,
+    //   // content: "<div class = 'taiwan'>宝岛台湾</div>",
+    //   position: new AMap.LngLat(116.397428, 39.90923),
+    //   offset: new AMap.Pixel(-8, -11),
+    //   title: 'test',
+    // });
 
-    map.addMarker(marker.marker);
+    // map.addMarker(marker.marker);
 
-    marker.addMarkerListner(EventTypes.CLICK, (ev) => {
-      console.log('zhangying->', ev);
-    });
+    // marker.addMarkerListner(EventTypes.CLICK, (ev) => {
+    //   console.log('zhangying->', ev);
+    // });
   }
 
 }
