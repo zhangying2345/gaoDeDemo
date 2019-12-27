@@ -156,6 +156,41 @@
           }
         }
       }
+    },
+    "amap-common": {
+      "root": "projects/amap-common",
+      "sourceRoot": "projects/amap-common/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/amap-common/tsconfig.lib.json",
+            "project": "projects/amap-common/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/amap-common/src/test.ts",
+            "tsConfig": "projects/amap-common/tsconfig.spec.json",
+            "karmaConfig": "projects/amap-common/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/amap-common/tsconfig.lib.json",
+              "projects/amap-common/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "testttttttt"

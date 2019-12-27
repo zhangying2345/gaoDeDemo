@@ -23,6 +23,12 @@
       ],
       "my-lib/*": [
         "dist/my-lib/*"
+      ],
+      "amap-common": [
+        "dist/amap-common"
+      ],
+      "amap-common/*": [
+        "dist/amap-common/*"
       ]
     }
   }

@@ -14,7 +14,7 @@ export class FirstLeafletComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    const map = L.map('map').setView([116.397428, 39.90923], 13);
+    // const map = L.map('map').setView([116.397428, 39.90923], 13);
 
     // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -37,7 +37,7 @@ export class FirstLeafletComponent implements OnInit {
     //   subdomains: ['1', '2', '3', '4'],
     // })
     // .addTo(map);
-    L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:18,minZoom:5}).addTo(map);
+    // L.tileLayer.chinaProvider('GaoDe.Normal.Map',{maxZoom:18,minZoom:5}).addTo(map);
   }
 
 }
