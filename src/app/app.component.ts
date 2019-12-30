@@ -55,8 +55,8 @@ export class AppComponent implements OnInit {
     // marker.addMarkerListner(EventTypes.CLICK, (ev) => {
     //   console.log('zhangying->', ev);
     // });
-    this.apiService.createMap('map-con', {}).then((res) => {
-      console.log('zhangying->res', res);
+    this.apiService.createMap('map-con', {}).then((map) => {
+      console.log('zhangying->res', map);
     });
 
   }
