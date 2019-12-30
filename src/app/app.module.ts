@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 import { MyLibModule } from 'my-lib';
 import { FirstLeafletComponent } from './first-leaflet/first-leaflet.component';
+import { AmapCommonModule } from 'amap-common';
 
 @NgModule({
   declarations: [
@@ -14,13 +15,18 @@ import { FirstLeafletComponent } from './first-leaflet/first-leaflet.component';
     FirstLeafletComponent,
   ],
   imports: [
+    AmapCommonModule.forRoot({
+      debug: false,
+      apiKey: 'cf30f0b17a88f551b039b7fcdef7a5fb'
+    }),
     BrowserModule,
     HttpClientModule,
     MyLibModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

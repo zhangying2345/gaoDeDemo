@@ -1,6 +1,5 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core';
 import { DocumentRef, WindowRef } from '../../utils/browser-globals';
-import { LoggerService } from '../logger/logger.service';
 
 export interface IMapAPILoaderConfig {
   apiKey?: string;
@@ -24,8 +23,7 @@ export class MapAPILoaderService {
 
   constructor(@Inject(MAP_API_CONFIG) config: any,
               d: DocumentRef,
-              w: WindowRef,
-              private logger: LoggerService) {
+              w: WindowRef,) {
     this._config = config || {};
     this._windowRef = w;
     this._documentRef = d;
@@ -35,7 +33,6 @@ export class MapAPILoaderService {
     if (this._mapLoaded) {
       return this._mapLoaded;
     }
-    this.logger.d(this.TAG, 'loading AMap api...');
 
     const callbackName = `ngxAMapAPILoader`;
     const script = this._documentRef.getNativeDocument().createElement('script');
@@ -46,7 +43,6 @@ export class MapAPILoaderService {
 
     this._mapLoaded = new Promise<void>((resolve: Function, reject: Function) => {
       (<any>this._windowRef.getNativeWindow())[callbackName] = () => {
-        this.logger.d(this.TAG, 'loading AMap api COMPLETE');
         resolve();
       };
 

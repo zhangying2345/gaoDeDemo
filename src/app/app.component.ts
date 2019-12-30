@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { Component, AfterViewInit, OnInit, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MyLibComponent } from 'my-lib';
@@ -6,7 +6,9 @@ import { MyLibComponent } from 'my-lib';
 import { GaoDeMap } from '../utils/map';
 import { Marker } from '../utils/marker';
 import { EventTypes } from 'src/utils/entity';
+import { MapAPIService } from 'amap-common';
 declare const AMap: any;
+
 
 @Component({
   selector: 'app-root',
@@ -14,6 +16,12 @@ declare const AMap: any;
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  constructor(
+    private apiService: MapAPIService,
+    private el: ElementRef
+    ) {
+
+  }
   /* check = true;
 
   name = new FormControl('zhangying', [
@@ -47,6 +55,10 @@ export class AppComponent implements OnInit {
     // marker.addMarkerListner(EventTypes.CLICK, (ev) => {
     //   console.log('zhangying->', ev);
     // });
+    this.apiService.createMap('map-con', {}).then((res) => {
+      console.log('zhangying->res', res);
+    });
+
   }
 
 }

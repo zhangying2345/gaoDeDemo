@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from 'leaflet';
-import * from 'leaflet.chinatmsproviders';
 
 //http://0x0803.top/2018/05/27/gis-leaflet-tutorials-map-layer/
 //https://www.giserdqy.com/secdev/leaflet/26005/
