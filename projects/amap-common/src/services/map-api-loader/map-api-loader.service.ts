@@ -23,7 +23,7 @@ export class MapAPILoaderService {
 
   constructor(@Inject(MAP_API_CONFIG) config: any,
               d: DocumentRef,
-              w: WindowRef,) {
+              w: WindowRef) {
     this._config = config || {};
     this._windowRef = w;
     this._documentRef = d;
